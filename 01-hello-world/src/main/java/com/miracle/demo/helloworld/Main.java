@@ -8,6 +8,12 @@
  */
 package com.miracle.demo.helloworld;
 
+import org.apache.camel.CamelContext;
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.impl.DefaultCamelContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * @program: miracle-camel-demo
  * @className: Main
@@ -18,8 +24,23 @@ package com.miracle.demo.helloworld;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        System.out.println("dedd");
+    private static final String FROM_PATH = "/Users/awen/Desktop/from";
+    private static final String TO_PATH = "/Users/awen/Desktop/to";
+
+    private static Logger logger = LoggerFactory.getLogger(Main.class);
+
+    public static void main(String[] args) throws Exception {
+        logger.info("start.");
+        CamelContext context = new DefaultCamelContext();
+        RouteBuilder routeBuilder = new RouteBuilder() {
+            @Override
+            public void configure() throws Exception {
+                from("file:" + FROM_PATH)
+                        .to("file:" + TO_PATH);
+            }
+        };
+        context.addRoutes(routeBuilder);
+
     }
 
 }
