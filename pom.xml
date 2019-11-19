@@ -9,6 +9,7 @@
     <version>1.0</version>
     <modules>
         <module>01-hello-world</module>
+        <module>02-component-file</module>
     </modules>
     <packaging>pom</packaging>
     <description>The parent project of study camel .</description>
