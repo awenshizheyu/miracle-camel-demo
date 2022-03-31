@@ -15,7 +15,7 @@
     <description>The parent project of study camel .</description>
     <inceptionYear>2019</inceptionYear>
     <properties>
-        <org.springframework-version>4.2.5.RELEASE</org.springframework-version>
+        <org.springframework-version>5.3.18</org.springframework-version>
         <org.aspectj-version>1.6.10</org.aspectj-version>
 
         <org.slf4j-version>1.8.0-beta4</org.slf4j-version>
